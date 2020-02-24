@@ -10,9 +10,8 @@ const useSelect = (stateInicial, options) => {
             value={state}
             onChange={e => actualizarState(e.target.value)}
         >
-            <option value="">Seleccione la categoría</option>
             {Array.isArray(options) && options.map(opt => (
-                <option value={opt.value}>{opt.label}</option>
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
             ))}
         </select>
     );
